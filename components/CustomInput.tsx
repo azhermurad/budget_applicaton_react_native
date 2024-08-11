@@ -27,12 +27,12 @@ const InputField = ({
                 className={`mt-[1.875rem] flex-row items-center border-[1.5px] border-grayPrimary h-14 rounded-xl  px-3 relative`}
             >
                 <Text
-                    className={`absolute font-bold text-sm text-grayPrimary capitalize px-1 -top-2 leading-4 left-3 bg-white`}
+                    className={`absolute font-uberMoveBold text-sm text-grayPrimary capitalize px-1 -top-2 leading-4 left-3 bg-white`}
                 >
                     {name}
                 </Text>
                 <TextInput
-                    className={`flex-1 text-lightDark text-sm leading-4 font-bold`}
+                    className={`flex-1 text-lightDark text-sm leading-4 font-uberMoveBold align-middle`}
                     onChangeText={(value) => {
                         textChangeHandler(value, name);
                     }}

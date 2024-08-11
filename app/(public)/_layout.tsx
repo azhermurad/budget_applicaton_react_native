@@ -13,6 +13,22 @@ export default function RootLayout() {
                         statusBarTranslucent: true,
                     }}
                 />
+                <Stack.Screen
+                    name='register'
+                    options={{
+                        headerShown: false,
+                        navigationBarHidden: true,
+                        statusBarTranslucent: true,
+                    }}
+                />
+                <Stack.Screen
+                    name='forgetPassword'
+                    options={{
+                        headerShown: false,
+                        navigationBarHidden: true,
+                        statusBarTranslucent: true,
+                    }}
+                />
             </Stack>
         </>
     );

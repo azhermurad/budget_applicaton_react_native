@@ -2,6 +2,9 @@ import { View, Text, ScrollView, Dimensions } from 'react-native';
 import React, { FC, ReactNode } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Image } from 'expo-image';
+import BackBtn from '../Buttons/BackBtn';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useRouter } from 'expo-router';
 
 interface IPropsAuthScreenLayout {
     screenTitle: string;
@@ -14,7 +17,15 @@ const AuthScreenLayout: FC<IPropsAuthScreenLayout> = ({
     screenTitle,
     subTitle,
 }) => {
+    const router = useRouter();
     const { height, width } = Dimensions.get('screen');
+    const { top: insectTop } = useSafeAreaInsets();
+    const goBackHander = () => {
+        console.log(router.canGoBack());
+        if (router.canGoBack()) {
+            router.back();
+        }
+    };
     return (
         <View className='flex-1 relative'>
             <LinearGradient className='flex-1' colors={['#1A237E', '#64B5F6']}>
@@ -31,24 +42,38 @@ const AuthScreenLayout: FC<IPropsAuthScreenLayout> = ({
                 <ScrollView showsVerticalScrollIndicator={false}>
                     {/*  headersection */}
                     <View
-                        style={{ height: height * (30 / 100) }}
-                        className='justify-end'
+                        style={{
+                            height: height * (30 / 100),
+                        }}
                     >
-                        <View className=' mx-6 max-w-[286px] mb-6'>
-                            <Text
-                                // style={{ fontFamily: 'CaliforniaRegular' }}
-                                className='font-uberMoveBold text-[35px] text-white leading-[3rem]'
-                            >
-                                {screenTitle}
-                            </Text>
-                            <Text className='font-uberMove text-[13px] leading-4 text-white mt-4'>
-                                {subTitle}
-                            </Text>
+                        <View
+                            className='flex-1 justify-between'
+                            style={{
+                                height: '100%',
+                            }}
+                        >
+                            <View style={{ marginTop: insectTop + 10 }}>
+                                {router.canGoBack() && (
+                                    <BackBtn onpress={goBackHander} />
+                                )}
+                            </View>
+
+                            <View className=' mx-6 max-w-[286px] mb-6'>
+                                <Text
+                                    // style={{ fontFamily: 'CaliforniaRegular' }}
+                                    className='font-uberMoveBold text-[35px] text-white leading-[3rem]'
+                                >
+                                    {screenTitle}
+                                </Text>
+                                <Text className='font-uberMove text-[13px] leading-4 text-white mt-4'>
+                                    {subTitle}
+                                </Text>
+                            </View>
                         </View>
                     </View>
                     {/* input,buttons,etc */}
                     <View
-                        style={{ height: height * (70 / 100) }}
+                        style={{ minHeight: height * (70 / 100) }}
                         className=' bg-white rounded-t-[50px] px-6 pt-[0.625rem]'
                     >
                         {children}

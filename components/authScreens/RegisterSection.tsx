@@ -7,7 +7,7 @@ import Separator from '../Separator';
 import SocialLogin from '../SocialLogin';
 import { useRouter } from 'expo-router';
 
-const LoginSection = () => {
+const RegisterSection = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
@@ -24,9 +24,15 @@ const LoginSection = () => {
         <>
             <View className='flex-1'>
                 <CustomInput
-                    name='email'
+                    name='fullname'
+                    value={''}
+                    placeholder='Luminary Budgets'
+                    textChangeHandler={textChangeHandler}
+                />
+                <CustomInput
+                    name='Email'
                     value={email}
-                    placeholder='test@gmail.com'
+                    placeholder='luminarybudgets@gmail.com'
                     textChangeHandler={textChangeHandler}
                 />
                 <CustomInput
@@ -37,28 +43,30 @@ const LoginSection = () => {
                     secureTextEntry={true}
                     isPassword={true}
                 />
+                <CustomInput
+                    name='password'
+                    value={password}
+                    placeholder='Repeat Password'
+                    textChangeHandler={textChangeHandler}
+                    secureTextEntry={true}
+                    isPassword={true}
+                />
+
                 <View className='items-end mt-3'>
-                    <LinkBtn
-                        title='Forgot Password?'
-                        onpress={() => {
-                            router.push('/(public)/forgetPassword');
-                        }}
-                    />
+                    <LinkBtn title='Forgot Password?' onpress={() => {}} />
                 </View>
                 <View className='my-[1.875rem]'>
-                    <AppButton title='Login' onpress={() => {}} />
+                    <AppButton title='Register' onpress={() => {}} />
                 </View>
-                <Separator title='Or login with' />
-                <SocialLogin />
             </View>
             <View className='items-center justify-center mb-10 flex-row'>
                 <Text className='text-sm font-uberMove leading-4 text-lightDark'>
-                    Don't have an account?
+                    Already have an account?
                 </Text>
                 <LinkBtn
-                    title=' Register'
+                    title=' Login'
                     onpress={() => {
-                        router.push('/register');
+                        router.dismissAll();
                     }}
                 />
             </View>
@@ -66,4 +74,4 @@ const LoginSection = () => {
     );
 };
 
-export default LoginSection;
+export default RegisterSection;

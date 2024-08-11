@@ -21,7 +21,7 @@ const AppButton: FC<IpropsAppButton> = ({
         >
             <Text
                 style={{ color: textColor }}
-                className='font-bold leading-5 text-lg'
+                className='font-uberMoveBold leading-5 text-lg'
             >
                 {title}
             </Text>

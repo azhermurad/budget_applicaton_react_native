@@ -2,8 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import AuthScreenLayout from '../../components/authScreens/authScreenLayout';
 import LoginSection from '../../components/authScreens/LoginSection';
 
-LoginSection;
-
 export default function Index() {
     return (
         <>

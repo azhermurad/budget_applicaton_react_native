@@ -10,7 +10,7 @@ const LinkBtn = ({ title, onpress, style }: LinkBtnType) => {
     return (
         <TouchableOpacity onPress={onpress}>
             <Text
-                className={`text-pink font-bold text-sm leading-4 ${
+                className={`text-pink font-uberMoveBold text-sm leading-4 ${
                     style && style
                 }`}
             >
