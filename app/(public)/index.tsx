@@ -8,6 +8,7 @@ export default function Index() {
             <AuthScreenLayout
                 screenTitle='Sign in to your Accounts'
                 subTitle='Sign in to your Account'
+                isBackButton={false}
             >
                 <LoginSection />
             </AuthScreenLayout>

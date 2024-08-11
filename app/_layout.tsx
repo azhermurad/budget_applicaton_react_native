@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import '../global.css';
 import { Slot } from 'expo-router';
 import { useFonts } from 'expo-font';
 
@@ -21,7 +23,11 @@ const RootLayout = () => {
     if (!loaded && !error) {
         return null;
     }
-    return <Slot />;
+    return (
+        <GestureHandlerRootView style={{ flex: 1 }}>
+            <Slot />
+        </GestureHandlerRootView>
+    );
 };
 
 // context api provider all will come here

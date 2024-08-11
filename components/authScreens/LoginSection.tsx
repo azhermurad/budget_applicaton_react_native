@@ -41,7 +41,7 @@ const LoginSection = () => {
                     <LinkBtn
                         title='Forgot Password?'
                         onpress={() => {
-                            router.push('/(public)/forgetPassword');
+                            router.push('/forgetPassword');
                         }}
                     />
                 </View>

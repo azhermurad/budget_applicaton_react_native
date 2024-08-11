@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import CustomInput from '../CustomInput';
 import LinkBtn from '../Buttons/LinkBtn';
 import AppButton from '../Buttons/AppButton';
-import Separator from '../Separator';
-import SocialLogin from '../SocialLogin';
+import Checkbox from 'expo-checkbox';
 import { useRouter } from 'expo-router';
 
 const RegisterSection = () => {
+    const [isChecked, setChecked] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const router = useRouter();
@@ -52,9 +52,20 @@ const RegisterSection = () => {
                     isPassword={true}
                 />
 
-                <View className='items-end mt-3'>
-                    <LinkBtn title='Forgot Password?' onpress={() => {}} />
+                <View className='flex-row items-center mt-3'>
+                    <Checkbox
+                        // style={styles.checkbox}
+                        className='rounded mr-2'
+                        value={isChecked}
+                        onValueChange={setChecked}
+                        color={isChecked ? '#9013FE' : undefined}
+                    />
+                    <Text className='text-sm font-uberMove leading-4 text-lightDark'>
+                        Agree with
+                    </Text>
+                    <LinkBtn title=' Terms & Condition' onpress={() => {}} />
                 </View>
+
                 <View className='my-[1.875rem]'>
                     <AppButton title='Register' onpress={() => {}} />
                 </View>

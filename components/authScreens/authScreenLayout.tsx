@@ -5,27 +5,34 @@ import { Image } from 'expo-image';
 import BackBtn from '../Buttons/BackBtn';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
+import MyBottomSheetModal from '../MyBottomSheetModal';
 
 interface IPropsAuthScreenLayout {
     screenTitle: string;
     subTitle: String;
     children: ReactNode;
+    isBackButton: boolean;
+    bottomSheetModalRef: React.RefObject<BottomSheetModal>;
 }
 
 const AuthScreenLayout: FC<IPropsAuthScreenLayout> = ({
     children,
     screenTitle,
     subTitle,
+    isBackButton,
+    bottomSheetModalRef,
 }) => {
     const router = useRouter();
     const { height, width } = Dimensions.get('screen');
     const { top: insectTop } = useSafeAreaInsets();
+
     const goBackHander = () => {
-        console.log(router.canGoBack());
         if (router.canGoBack()) {
             router.back();
         }
     };
+
     return (
         <View className='flex-1 relative'>
             <LinearGradient className='flex-1' colors={['#1A237E', '#64B5F6']}>
@@ -53,7 +60,7 @@ const AuthScreenLayout: FC<IPropsAuthScreenLayout> = ({
                             }}
                         >
                             <View style={{ marginTop: insectTop + 10 }}>
-                                {router.canGoBack() && (
+                                {isBackButton && router.canGoBack() && (
                                     <BackBtn onpress={goBackHander} />
                                 )}
                             </View>
@@ -78,6 +85,11 @@ const AuthScreenLayout: FC<IPropsAuthScreenLayout> = ({
                     >
                         {children}
                     </View>
+
+                    {/* BottomSheet */}
+                    <MyBottomSheetModal
+                        bottomSheetModalRef={bottomSheetModalRef}
+                    />
                 </ScrollView>
             </LinearGradient>
         </View>
