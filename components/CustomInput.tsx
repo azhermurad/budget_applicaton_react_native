@@ -24,7 +24,7 @@ const InputField = ({
     {
         return (
             <View
-                className={`mt-[1.875rem] flex-row items-center border-1 border-grayPrimary h-14 rounded-xl  px-3 relative`}
+                className={`mt-[1.875rem] flex-row items-center border-[1.5px] border-grayPrimary h-14 rounded-xl  px-3 relative`}
             >
                 <Text
                     className={`absolute font-bold text-sm text-grayPrimary capitalize px-1 -top-2 leading-4 left-3 bg-white`}

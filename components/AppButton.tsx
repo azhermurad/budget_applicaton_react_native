@@ -1,6 +1,5 @@
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import React, { FC } from 'react';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 interface IpropsAppButton {
     title: string;

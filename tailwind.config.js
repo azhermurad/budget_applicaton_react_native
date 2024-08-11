@@ -17,6 +17,11 @@ module.exports = {
                 DEFAULT: '1px',
                 1: '1.5px',
             },
+            fontFamily: {
+                uberMove: ['UberMove', 'sans-serif'],
+                uberMoveBold: ['UberMove-Bold', 'sans-serif'],
+                californiaRegular: ['CaliforniaRegular', 'sans-serif'],
+            },
         },
     },
     plugins: [],
