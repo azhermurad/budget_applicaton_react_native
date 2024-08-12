@@ -15,3 +15,4 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
     ```bash
      npx expo start
     ```
+![App Image](https://raw.githubusercontent.com/azhermurad/budget_applicaton_react_native/main/assets/images/appimage.png)
