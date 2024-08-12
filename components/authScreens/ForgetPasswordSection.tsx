@@ -1,8 +1,7 @@
 import { View } from 'react-native';
 import CustomInput from '../CustomInput';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import AppButton from '../Buttons/AppButton';
-import { BottomSheetModal } from '@gorhom/bottom-sheet';
 
 const ForgetPasswordSection = ({
     bottomSheetHandler,
@@ -15,7 +14,7 @@ const ForgetPasswordSection = ({
     };
     return (
         <>
-            <View className='flex-1 bg-green-400'>
+            <View className='flex-1'>
                 <CustomInput
                     name='Email'
                     value={email}
