@@ -1,9 +1,13 @@
-# Welcome to your Expo app 👋
+# Welcome to Budget Applicaton 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
 
+## Screens
+![App Image](https://raw.githubusercontent.com/azhermurad/budget_applicaton_react_native/main/assets/images/appimage.png)
+
+
+## Get started
 1. Install dependencies
 
     ```bash
@@ -15,4 +19,4 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
     ```bash
      npx expo start
     ```
-![App Image](https://raw.githubusercontent.com/azhermurad/budget_applicaton_react_native/main/assets/images/appimage.png)
+
