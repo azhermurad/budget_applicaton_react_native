@@ -28,6 +28,14 @@ export default function RootLayout() {
                         statusBarTranslucent: true,
                     }}
                 />
+                <Stack.Screen
+                    name='newPassword'
+                    options={{
+                        headerShown: false,
+                        navigationBarHidden: true,
+                        statusBarTranslucent: true,
+                    }}
+                />
             </Stack>
         </>
     );

@@ -16,7 +16,7 @@ const ForgetPasswordSection = ({
         <>
             <View className='flex-1'>
                 <CustomInput
-                    name='Email'
+                    name='email'
                     value={email}
                     placeholder='luminarybudgets@gmail.com'
                     textChangeHandler={textChangeHandler}

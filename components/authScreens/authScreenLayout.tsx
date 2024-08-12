@@ -13,7 +13,8 @@ interface IPropsAuthScreenLayout {
     subTitle: String;
     children: ReactNode;
     isBackButton: boolean;
-    bottomSheetModalRef: React.RefObject<BottomSheetModal>;
+    bottomSheetModalRef?: React.RefObject<BottomSheetModal>;
+    isBottomSheetModal?: boolean;
 }
 
 const AuthScreenLayout: FC<IPropsAuthScreenLayout> = ({
@@ -21,7 +22,8 @@ const AuthScreenLayout: FC<IPropsAuthScreenLayout> = ({
     screenTitle,
     subTitle,
     isBackButton,
-    bottomSheetModalRef,
+    bottomSheetModalRef = null,
+    isBottomSheetModal = false,
 }) => {
     const router = useRouter();
     const { height, width } = Dimensions.get('screen');
@@ -87,9 +89,11 @@ const AuthScreenLayout: FC<IPropsAuthScreenLayout> = ({
                     </View>
 
                     {/* BottomSheet */}
-                    <MyBottomSheetModal
-                        bottomSheetModalRef={bottomSheetModalRef}
-                    />
+                    {isBottomSheetModal && (
+                        <MyBottomSheetModal
+                            bottomSheetModalRef={bottomSheetModalRef as any}
+                        />
+                    )}
                 </ScrollView>
             </LinearGradient>
         </View>

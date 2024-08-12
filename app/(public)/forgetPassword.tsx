@@ -1,9 +1,7 @@
 import { useCallback, useRef } from 'react';
 import AuthScreenLayout from '../../components/authScreens/authScreenLayout';
 import ForgetPasswordSection from '../../components/authScreens/ForgetPasswordSection';
-import RegisterSection from '../../components/authScreens/RegisterSection';
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
-import AppButton from '../../components/Buttons/AppButton';
 
 const forgetPassword = () => {
     const bottomSheetModalRef = useRef<BottomSheetModal>(null);
@@ -17,6 +15,7 @@ const forgetPassword = () => {
             subTitle='Enter your email Account to reset Password'
             isBackButton
             bottomSheetModalRef={bottomSheetModalRef}
+            isBottomSheetModal={true}
         >
             <ForgetPasswordSection bottomSheetHandler={bottomSheetHandler} />
         </AuthScreenLayout>

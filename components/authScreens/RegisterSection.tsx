@@ -8,44 +8,45 @@ import { useRouter } from 'expo-router';
 
 const RegisterSection = () => {
     const [isChecked, setChecked] = useState(false);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const router = useRouter();
+    const [inputData, setInputData] = useState({
+        fullname: '',
+        email: '',
+        password: '',
+        repeatpassword: '',
+    });
 
     const textChangeHandler = (value: string, name: string) => {
-        // implement this logic later
-        if (name == 'email') {
-            setEmail(value);
-            return;
-        }
-        setPassword(value);
+        setInputData((preState) => {
+            return { ...preState, [name]: value };
+        });
     };
     return (
         <>
             <View className='flex-1'>
                 <CustomInput
                     name='fullname'
-                    value={''}
+                    value={inputData.fullname}
                     placeholder='Luminary Budgets'
                     textChangeHandler={textChangeHandler}
                 />
                 <CustomInput
-                    name='Email'
-                    value={email}
+                    name='email'
+                    value={inputData.email}
                     placeholder='luminarybudgets@gmail.com'
                     textChangeHandler={textChangeHandler}
                 />
                 <CustomInput
                     name='password'
-                    value={password}
+                    value={inputData.password}
                     placeholder='password'
                     textChangeHandler={textChangeHandler}
                     secureTextEntry={true}
                     isPassword={true}
                 />
                 <CustomInput
-                    name='password'
-                    value={password}
+                    name='repeatpassword'
+                    value={inputData.repeatpassword}
                     placeholder='Repeat Password'
                     textChangeHandler={textChangeHandler}
                     secureTextEntry={true}

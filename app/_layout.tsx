@@ -11,7 +11,6 @@ const RootLayout = () => {
     const [loaded, error] = useFonts({
         UberMove: require('../assets/fonts/UberMove-Regular.ttf'),
         'UberMove-Bold': require('../assets/fonts/UberMove-Bold.ttf'),
-        CaliforniaRegular: require('../assets/fonts/CaliforniaRegular.ttf'),
     });
 
     useEffect(() => {
@@ -32,6 +31,5 @@ const RootLayout = () => {
 
 // context api provider all will come here
 export default function Root() {
-    console.log('first calling function');
     return <RootLayout />;
 }

@@ -9,6 +9,7 @@ import { wp } from '../utils/responsiveUnit';
 import CustomBackdrop from './CustomBackdrop';
 import AppButton from './Buttons/AppButton';
 import { Image } from 'expo-image';
+import { router } from 'expo-router';
 
 interface IProps {
     bottomSheetModalRef: React.RefObject<BottomSheetModal>;
@@ -74,7 +75,13 @@ const MyBottomSheetModal: FC<IProps> = ({ bottomSheetModalRef }) => {
                         </Text>
                     </View>
                     <View className='mt-7'>
-                        <AppButton title='Done' onpress={() => {}} />
+                        <AppButton
+                            title='Done'
+                            onpress={() => {
+                                router.push('/newPassword');
+                                closeModal();
+                            }}
+                        />
                     </View>
                 </BottomSheetView>
             </BottomSheetModal>

@@ -20,7 +20,6 @@ module.exports = {
             fontFamily: {
                 uberMove: ['UberMove', 'sans-serif'],
                 uberMoveBold: ['UberMove-Bold', 'sans-serif'],
-                californiaRegular: ['CaliforniaRegular', 'sans-serif'],
             },
         },
     },

@@ -8,30 +8,31 @@ import SocialLogin from '../SocialLogin';
 import { useRouter } from 'expo-router';
 
 const LoginSection = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const router = useRouter();
+    const [inputData, setInputData] = useState({
+        email: '',
+        password: '',
+    });
 
     const textChangeHandler = (value: string, name: string) => {
-        // implement this logic later
-        if (name == 'email') {
-            setEmail(value);
-            return;
-        }
-        setPassword(value);
+        setInputData((preState) => {
+            return { ...preState, [name]: value };
+        });
     };
+
+    console.log(inputData);
     return (
         <>
             <View className='flex-1'>
                 <CustomInput
                     name='email'
-                    value={email}
+                    value={inputData.email}
                     placeholder='test@gmail.com'
                     textChangeHandler={textChangeHandler}
                 />
                 <CustomInput
                     name='password'
-                    value={password}
+                    value={inputData.password}
                     placeholder='password'
                     textChangeHandler={textChangeHandler}
                     secureTextEntry={true}
